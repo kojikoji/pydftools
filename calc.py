@@ -1,4 +1,7 @@
-def add_columns(df, func, stats, colnames):
-    rlt = func(df[stats])
-    df.loc[:, colnames] = rlt
-    return(df)
+import pandas as pd
+
+
+class CalcDf(pd.DataFrame):
+    def add_columns(self, func, stats, colnames):
+        rlt = func(self[stats])
+        self.loc[:, colnames] = rlt
