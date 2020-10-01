@@ -1,5 +1,10 @@
 import setuptools
 
+
+def _requires_from_file(filename):
+    return open(filename).read().splitlines()
+
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -11,8 +16,8 @@ setuptools.setup(
     description="Tools for pandas.DataFrame",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=setuptools.find_packages(include=["pydftools", "pydftools.*"]),
-    install_requires=['pandas'],
+    packages=setuptools.find_packages(),
+    install_requires=_requires_from_file('requirements.txt'),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
