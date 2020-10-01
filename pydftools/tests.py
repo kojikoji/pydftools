@@ -1,7 +1,6 @@
 import unittest
-import pandas as pd
 import numpy as np
-import calc
+from pydftools import calc
 
 
 class TestCalcs(unittest.TestCase):
